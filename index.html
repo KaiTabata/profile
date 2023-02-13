@@ -37,7 +37,7 @@
                 <div class="media-content">
                   <div class="content">
                     <p>
-                      <strong>Kai Tabata</strong> <small>@kai137_036</small> <small>1m</small>
+                      <strong>Kai Tabata</strong> <small>@kai137_036</small><small id="time">time</small>
                       <br>
                       タグを読み取ってくださりありがとうございます！あなたとお会いできてうれしいです。<br>私の連絡先はこのページにまとめてあります！
                     </p>
@@ -127,4 +127,16 @@
         </div>
         </footer>  
   </body>
+  <script>
+    // 現在時刻を取得
+    const now = new Date();
+
+    // 時間と分を取得
+    const hour = now.getHours();
+    const minute = now.getMinutes();
+
+    // HTMLの<p>要素に時間を出力
+    const timeElement = document.getElementById("time");
+    timeElement.innerHTML = " " + hour + ":" + minute;
+  </script>
 </html>
