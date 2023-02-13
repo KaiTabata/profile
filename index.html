@@ -128,15 +128,12 @@
         </footer>  
   </body>
   <script>
-    // 現在時刻を取得
-    const now = new Date();
-
-    // 時間と分を取得
-    const hour = now.getHours();
-    const minute = now.getMinutes();
-
-    // HTMLの<p>要素に時間を出力
-    const timeElement = document.getElementById("time");
-    timeElement.innerHTML = " " + hour + ":" + minute;
+    document.addEventListener('DOMContentLoaded', function() {
+      const now = new Date();
+      const hour = String(now.getHours()).padStart(2, '0');
+      const minute = String(now.getMinutes()).padStart(2, '0');
+      const time = `${hour}:${minute}`;
+      document.querySelector(".content small:last-of-type").textContent = time;
+    });
   </script>
 </html>
